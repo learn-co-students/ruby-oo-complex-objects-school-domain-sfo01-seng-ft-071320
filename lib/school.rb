@@ -1,3 +1,4 @@
+require 'pry'
 class School 
     
     def initialize(name)
@@ -15,7 +16,6 @@ class School
             roster[grade] = []
             roster[grade] << name
         end
-        roster 
     end
    
     def grade(grade)
@@ -23,10 +23,8 @@ class School
     end 
 
     def sort 
-        roster.each do |key, value|
-            value.sort!
-        end
-        roster.sort.to_h
+        roster.each {|key, value| value.sort!}
+        
     end
 
 end
